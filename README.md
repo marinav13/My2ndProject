@@ -1,53 +1,41 @@
  <!-- GETTING STARTED -->
-## About the Pandemic Job Loss in MA project
+## About the Evictions in MA project
 
 <h1>What I aimed to accomplish:</h1>
 
-<p>I hoped to see whether the public and private sector has regained jobs lost in the pandemic in MA. I also wanted to zoom in on certain sectors to see if job loss where any job loss has been concentrated. </p>
+<p>I wanted to see whether evictions are on the rise in Massachusetts. I also wanted to learn how to scrape from Tableau visualizations in cases where it's otherwise not possible to download the data. </p>
 
 <br>
 <br>
 <h1>Short description of your findings</h1>
-<p> I found that the private and local government sectors have rebounded in MA. However, the state government sector has yet to regain all jobs lost in the pandemic. Hard-hit sectors include state government hospitals, which lost 1,000 jobs for a 20% drop. The state government education sector also saw a drop -- this sector includes teaching assistants. The hospital sector overall rebounded in the pandemic - but I found that nursing homes have yet to recover. </p>
+<p> I found that evictions have spiked in MA this year. Hard-hit communities include Fall River, Holyoke, Springfield, Pittsfield and New Bedford, where evictions and money order judgments are disproptionately high. </p>
 
 <br>
 <br>
 <h1>Summary of the data collection process, with links</h1>
-<p> I used an API to look through various Bureau of Labor Statistic series and compare data from May 2023 to May 2019. </p>
-<p> I started with <a href="[url](https://beta.bls.gov/dataQuery/find?st=0&r=20&s=popularity%3AD&fq=survey:[sm]&fq=cg:[Geography]&fq=cc:[States+and+Territories]&fq=ccd:[Massachusetts]&fq=mg:[Measure+Published+By]&fq=mg:[Measure+Category]&fq=mg:[Measure+Attributes]&fq=mc:[Employed]&more=0&q=hospitals)">BLS Data Finder.</a> </p>
+<p> I used <a href="https://github.com/bertrandmartel/tableau-scraping">a wonderful Tableau scraping tool created by Bertrandmartel to download .CSV files from Tableau visualizations maintained by the Massachusetts state trial court system. The trial court system has refused to simply allow the public to download data from its public Tableau visualization. I have requested the data but have only received partial data for another visualization. The state trial court system has correctly stated that the judiciary is exempt from the public records access law. </a> </p>
 <p> I used the following data sets for the state of Massachusetts:</p>
 
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000000500000001">Total Private</a></p>
+<p><a href="https://public.tableau.com/shared/4RPS78R3R?:display_count=n&:origin=viz_share_link">2020-2023 eviction orders</a></p>
 
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000009093000001">Local Government</a></p>
+<p><a href="https://public.tableau.com/shared/8S6Q53TYD?:display_count=n&:origin=viz_share_link">by location eviction orders since 2020</a></p>
 
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000009092000001">State Government</a></p>
-
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000009092262201">State Government Hospitals</a></p>
-
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000009092161101">State Government Educational Services</a></p>
-
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000009092200001">Government - State Government Excluding Education</a></p>
-
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000006562300001">Nursing and Residential Care Facilities</a></p>
-
-<p><a href="https://beta.bls.gov/dataViewer/view/timeseries/SMU25000006562200001">Hospitals</a></p>
-
+<p><a href="https://public.tableau.com/shared/F8Q5B97KS?:display_count=n&:origin=viz_share_link">#by location eviction orders since 2022</a></p>
 
 <br>
 <br>
 <h1>Overview of the data analysis process</h1>
-<p>I used for loops to go through the data and get variables to analyze the data. Then I simply subtracted the new minus the old values, then divided over the old to find the percent change. I used if statements to analyze whether May 2023 employment figures were greater than or equal to May 2019 figures. </p>
+<p>I used Tableauscraper and for loops to go through the data, get worksheet names and then save the .csv files to a folder. I then analyzed the data using Excel pivot tables for the simple analysis of finding communities with the biggest counts of eviction orders and money judgments. I added <a href="https://www.census.gov/data/tables/time-series/demo/popest/2020s-total-cities-and-towns.html"> Census population data </a>, cleaned the data and used V Lookup to match communities with populations. I was unable to match every community with population data -- partly because the state data had a breakdown for Boston neighborhoods.
 
 <br>
 <br>
 <h1>A section about what new skills, approaches, etc you used, or where you grew the most during the project</h1>
-<p> I gained new skills in working with APIs (and getting used to the slowness of APIs) to find the data I want and conduct basic analysis. This code could function as a tracker I could use in future projects. </p>
+<p> I gained new skills in web scrapign and working in Github to find tools created by other users and modifying them to suit my own purposes. I have gained more confidence in how to use for loops to iterate through data and find what I need. I'll be able to use this code to scrap data from other Tableau visualizations. </p>
 
 <br>
 <br>
 <h1>A section about things you tried to do or wanted to do but did not have the skills/time (but if you have more time you might do)</h1>
-<p> It would be interesting to get breakdowns for the state government educational services data (like are these mostly teaching assistants, etc). I had a tough time figuring out how to find the datasets I wanted on the BLS site. I'd like to next do a look at nursing home closures and CMS staffing data to find out which nursing homes have lost the most workers.
+<p> I want to use MySQl or R to analyze and clean the data next time. I used Excel because I thought it would be straightforward, but I think I would have saved more time using SQL. I'd like to scrape data from Apartments.com for reporting on the rental market in MA next.
 </p>
 
 
